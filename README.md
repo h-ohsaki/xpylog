@@ -2,6 +2,8 @@
 
 xpylog - an xconsole-like syslog monitor on X11
 
+![screenshot](https://raw.githubusercontent.com/h-ohsaki/xpylog/master/screenshot/xpylog.jpg)
+
 # SYNOPSIS
 
 xpylog
