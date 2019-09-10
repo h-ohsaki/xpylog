@@ -18,8 +18,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-import collections.dequeue
+from collections import deque
 import re
+import subprocess
 import time
 
 from Xlib import X, display
@@ -47,11 +48,14 @@ def find_color(line):
 
 def main_loop(disp, screen, window, width, height, gcs):
     # main loop
-    f = open('/dev/xconsole', encoding='ascii', errors='backslashreplace')
-    recent_logs = collections.dqeueue(maxlen=NLINES)
+    proc = subprocess.Popen(['journalctl', '-f'],
+                            stdout=subprocess.PIPE,
+                            encoding='ascii',
+                            errors='backslashreplace')
+    recent_logs = deque(maxlen=NLINES)
     last_update = 0
     while True:
-        line = f.readline().rstrip()
+        line = proc.stdout.readline().rstrip()
         # remove T between date and time
         line = re.sub(r'(\d\d\d\d-\d\d-\d\d)T(\d\d:\d\d:\d\d)', r'\1 \2', line)
         # delete subseconds and time zone
