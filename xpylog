@@ -56,10 +56,6 @@ def main_loop(disp, screen, window, width, height, gcs):
     last_update = 0
     while True:
         line = proc.stdout.readline().rstrip()
-        # remove T between date and time
-        line = re.sub(r'(\d\d\d\d-\d\d-\d\d)T(\d\d:\d\d:\d\d)', r'\1 \2', line)
-        # delete subseconds and time zone
-        line = re.sub(r'(\d\d:\d\d:\d\d)\.\d+\+\d\d:\d\d', r'\1', line)
         recent_logs.append(line)
 
         # limit the frame rate by MAX_FPS after the screen is well populated
