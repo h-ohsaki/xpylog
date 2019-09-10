@@ -11,7 +11,7 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='xpylog',
-    version='1.0',
+    version='1.1',
     author='Hiroyuki Ohsaki',
     author_email='ohsaki@lsnl.jp',
     description='An xconsole-like syslog monitor on X11',
