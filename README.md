@@ -39,4 +39,4 @@ xpywm(1), xconsole(1), journalctl(1), systemd(1)
 
 # AUTHOR
 
-Hiroyuki Ohsaki <ohsaki[atmark]lsnl.jp>
+Hiroyuki Ohsaki <code[atmark]lsnl.jp>

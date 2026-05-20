@@ -33,7 +33,7 @@ COLOR_TABLE = {
         'OrangeRed'
     ]
 }
-NLINES = 64
+NLINES = 150
 MAX_FPS = 10
 X_OFFSET = 0
 Y_OFFSET = x11util.FONT_HEIGHT + 1
