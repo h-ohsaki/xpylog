@@ -11,7 +11,7 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='xpylog',
-    version='1.4',
+    version='1.5',
     author='Hiroyuki Ohsaki',
     author_email='ohsaki@lsnl.jp',
     description='An xconsole-like syslog monitor on X11',
@@ -21,9 +21,9 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     install_requires = ['Xlib', 'x11util'],
     scripts=['xpylog'],
+    license='GPL-3.0-only',
     classifiers=[
         'Programming Language :: Python :: 3',
-        'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
         'Operating System :: POSIX :: Linux',
     ],
 )

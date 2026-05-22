@@ -40,13 +40,13 @@ Y_OFFSET = x11util.FONT_HEIGHT + 1
 
 def find_color(line):
     """Pick the appropriate color according to the content of LINE."""
-    for categ in ['alert', 'critical']:
+    for categ in ['critical', 'alert']:
         regexp, color = COLOR_TABLE[categ]
         if re.search(regexp, line):
             return color
     return COLOR_TABLE['normal'][1]
 
-def main_loop(disp, screen, window, width, height, gcs):
+def main_loop(disp, screen, window, gcs):
     # main loop
     proc = subprocess.Popen(['journalctl', '-f'],
                             stdout=subprocess.PIPE,
@@ -95,7 +95,7 @@ def main():
                                    y=Y_OFFSET)
     window.configure(stack_mode=X.Below)
     gcs = x11util.create_gcs(disp, screen, window, font)
-    main_loop(disp, screen, window, width, height, gcs)
+    main_loop(disp, screen, window, gcs)
 
 if __name__ == "__main__":
     main()
